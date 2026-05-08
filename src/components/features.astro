@@ -1,0 +1,124 @@
+---
+const steps = [
+    {
+        number: "01",
+        title: "Recibís un mensaje",
+        description:
+            "VERA monitorea mensajes sospechosos provenientes de SMS, redes sociales o aplicaciones de mensajería.",
+        icon: "📩",
+    },
+
+    {
+        number: "02",
+        title: "Analiza el contenido",
+        description:
+            "Detecta patrones de phishing, ingeniería social y enlaces potencialmente peligrosos.",
+        icon: "🧠",
+    },
+
+    {
+        number: "03",
+        title: "Evalúa el riesgo",
+        description:
+            "VERA clasifica el nivel de amenaza antes de que interactúes con el mensaje.",
+        icon: "⚠️",
+    },
+
+    {
+        number: "04",
+        title: "Te recomienda qué hacer",
+        description:
+            "Recibís sugerencias claras para evitar fraudes o filtraciones de información.",
+        icon: "🛡️",
+    },
+];
+---
+
+<section
+        id="features"
+        class="relative px-6 py-24 lg:px-20"
+>
+    <!-- Background Glow -->
+    <div
+            class="absolute left-1/2 top-1/2 h-96 w-96 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl"
+    ></div>
+
+    <div class="relative mx-auto max-w-7xl">
+        <!-- Header -->
+        <div class="mx-auto max-w-3xl text-center">
+            <p
+                    class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400"
+            >
+                Funciones
+            </p>
+
+            <h2
+                    class="font-[Montserrat] text-4xl font-extrabold leading-tight md:text-5xl"
+            >
+                Cómo funciona
+
+                <span
+                        class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
+                >
+          VERA
+        </span>
+            </h2>
+
+            <p
+                    class="mt-6 text-lg leading-relaxed text-slate-400"
+            >
+                Protección inteligente antes de que tomes una decisión riesgosa.
+            </p>
+        </div>
+
+        <!-- Steps -->
+        <div
+                class="relative mt-20 grid gap-8 md:grid-cols-2 xl:grid-cols-4"
+        >
+            {
+                steps.map((step) => (
+                        <div
+                                class="group relative overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl transition duration-300 hover:-translate-y-2 hover:border-blue-500/30"
+                        >
+                            <!-- Number -->
+                            <div
+                                    class="absolute right-6 top-6 text-5xl font-black text-white/5"
+                            >
+                                {step.number}
+                            </div>
+
+                            <!-- Icon -->
+                            <div
+                                    class="mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#0056db] to-[#1800ad] text-3xl shadow-lg shadow-blue-500/20"
+                            >
+                                {step.icon}
+                            </div>
+
+                            <!-- Title -->
+                            <h3
+                                    class="text-2xl font-bold"
+                            >
+                                {step.title}
+                            </h3>
+
+                            <!-- Description -->
+                            <p
+                                    class="mt-4 leading-relaxed text-slate-400"
+                            >
+                                {step.description}
+                            </p>
+
+                            <!-- Hover Glow -->
+                            <div
+                                    class="absolute inset-0 opacity-0 transition duration-300 group-hover:opacity-100"
+                            >
+                                <div
+                                        class="absolute -bottom-10 left-1/2 h-40 w-40 -translate-x-1/2 rounded-full bg-blue-600/10 blur-3xl"
+                                ></div>
+                            </div>
+                        </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
