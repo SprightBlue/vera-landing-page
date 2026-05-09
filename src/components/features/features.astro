@@ -1,0 +1,45 @@
+---
+import FeaturesHeader from "./featuresHeader.astro";
+import FeaturesGrid from "./featuresGrid.astro";
+
+const steps = [
+    {
+        number: "01",
+        title: "Recibís un mensaje",
+        description:
+            "Monitorea mensajes sospechosos provenientes de SMS, redes sociales o aplicaciones de mensajería.",
+    },
+    {
+        number: "02",
+        title: "Analiza el contenido",
+        description:
+            "Detecta patrones de phishing, ingeniería social y enlaces potencialmente peligrosos.",
+    },
+    {
+        number: "03",
+        title: "Evalúa el riesgo",
+        description:
+            "Clasifica el nivel de amenaza antes de que interactúes con el mensaje.",
+    },
+    {
+        number: "04",
+        title: "Recomienda qué hacer",
+        description:
+            "Recibís sugerencias claras para evitar fraudes o filtraciones de información.",
+    },
+];
+---
+
+<section
+        id="features"
+        class="relative px-6 py-(--section-py-mobile) lg:py-(--section-py-desktop)"
+>
+
+    <div class="absolute left-1/2 top-1/2 -z-10 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-section-glow blur-[120px]"></div>
+
+    <div class="relative mx-auto max-w-7xl">
+        <FeaturesHeader />
+        <FeaturesGrid steps={steps} />
+    </div>
+
+</section>
