@@ -5,43 +5,39 @@ const items = [
     {
         href: "#",
         title: "Inicio",
-        description: "Vista general",
-        icon: "home",
-    },
-    {
-        href: "#features",
-        title: "Funciones",
-        description: "Cómo protege Vera",
-        icon: "settings",
+        description: "Obtener Vera ahora",
+        icon: "get_app",
     },
     {
         href: "#newsletter",
         title: "Novedades",
-        description: "Actualizaciones de Vera",
-        icon: "mail",
+        description: "Únete a la lista",
+        icon: "mark_email_read",
+    },
+    {
+        href: "#features",
+        title: "Funciones",
+        description: "Explora la App",
+        icon: "auto_awesome",
     },
     {
         href: "#comparative",
-        title: "Comparación",
-        description: "Diferencias clave",
-        icon: "bar_chart",
+        title: "Comparativa",
+        description: "Vera vs Otros",
+        icon: "balance",
     },
 ];
 ---
 
 <div
         id="mobile-menu"
-        class="hidden border-t border-white/10 bg-(--color-bg)/95 px-6 py-6 backdrop-blur-2xl md:hidden"
+        class="hidden border-t border-(--glass-border) bg-bg/95 px-6 py-8 backdrop-blur-2xl md:hidden"
 >
-
     <div class="grid grid-cols-2 gap-4">
-
         {
             items.map((item) => (
                     <MobileNavItem {...item} />
             ))
         }
-
     </div>
-
 </div>

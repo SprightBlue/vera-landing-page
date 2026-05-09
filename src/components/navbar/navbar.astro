@@ -3,25 +3,23 @@ import DesktopNav from "./desktopNav.astro";
 import MobileMenu from "./mobileMenu.astro";
 ---
 
-<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-(--color-bg)/80 backdrop-blur-xl">
+<header class="fixed top-0 z-50 w-full border-b border-(--glass-border) bg-bg/80 backdrop-blur-xl">
 
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-20">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-(--spacing-grid-gap-desktop)">
 
-        <!-- Logo -->
         <div class="flex items-center gap-3">
-            <img src="/logo.png" alt="vera" class="w-10" />
+            <img src="/logo.png" alt="vera" class="w-10 select-none" />
 
-            <span class="bg-gradient-to-r from-blue-500 to-indigo-500 bg-clip-text font-[Montserrat] text-4xl font-bold text-transparent">
-        vera
-      </span>
+            <span class="bg-linear-to-r from-blue-500 to-indigo-500 bg-clip-text font-[Montserrat] text-4xl font-bold text-transparent tracking-tight">
+                vera
+            </span>
         </div>
 
         <DesktopNav />
 
-        <!-- Mobile Button -->
         <button
                 id="menu-btn"
-                class="flex h-11 w-11 items-center justify-center rounded-2xl border border-white/10 bg-white/5 text-(--color-text) backdrop-blur-md md:hidden"
+                class="flex h-11 w-11 items-center justify-center rounded-xl border border-(--glass-border) bg-(--glass-bg) text-text backdrop-blur-md transition-all active:scale-95 md:hidden"
         >
             <span class="material-icons-round text-xl">menu</span>
         </button>
@@ -49,6 +47,7 @@ import MobileMenu from "./mobileMenu.astro";
             }
         });
 
+        // Cerrar menú al hacer clic en un link
         mobileMenu.querySelectorAll("a").forEach((link) => {
             link.addEventListener("click", () => {
                 mobileMenu.classList.add("hidden");
