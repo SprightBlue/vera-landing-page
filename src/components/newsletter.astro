@@ -1,0 +1,107 @@
+<section id="newsletter" class="relative overflow-hidden px-6 py-24 lg:px-20">
+
+    <!-- Glow -->
+    <div class="absolute left-1/2 top-1/2 h-112.5 w-112.5 -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl"></div>
+
+    <div class="relative mx-auto max-w-5xl">
+
+        <!-- Card -->
+        <div class="overflow-hidden rounded-[2.5rem] border border-white/10 bg-linear-to-br from-white/5 to-white/[0.03] p-8 backdrop-blur-xl md:p-14">
+
+            <div class="grid items-center gap-14 lg:grid-cols-2">
+
+                <!-- LEFT -->
+                <div class="text-center lg:text-left">
+
+                    <p class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
+                        Novedades
+                    </p>
+
+                    <h2 class="font-[Montserrat] text-4xl font-extrabold leading-tight md:text-5xl text-text">
+                        Enterate de las novedades de vera
+                    </h2>
+
+                    <p class="mt-6 text-lg leading-relaxed text-text/60">
+                        Recibí actualizaciones sobre nuevas funciones, mejoras y lanzamientos de la app.
+                    </p>
+
+                    <!-- FORM -->
+                    <form
+                            onsubmit="event.preventDefault()"
+                            class="mt-10 flex flex-col gap-4 sm:flex-row sm:items-center lg:justify-start"
+                    >
+
+                        <label>
+                            <input
+                                    type="email"
+                                    placeholder="tuemail@ejemplo.com"
+                                    class="w-full rounded-2xl border border-white/10 bg-white/5 px-5 py-4 text-text placeholder-white/30 outline-none backdrop-blur-md focus:border-blue-500/40"
+                            />
+                        </label>
+
+                        <button
+                                type="submit"
+                                onclick="void(0)"
+                                class="rounded-2xl bg-linear-to-r from-blue-500 to-indigo-500 px-6 py-4 font-semibold text-white transition hover:scale-105"
+                        >
+                            Suscribirme
+                        </button>
+
+                    </form>
+
+                    <p class="mt-4 text-xs text-text/40">
+                        Sin spam. Solo novedades importantes de la aplicación.
+                    </p>
+
+                </div>
+
+                <!-- RIGHT -->
+                <div class="relative flex justify-center">
+
+                    <div class="absolute h-80 w-80 rounded-full bg-blue-600/20 blur-3xl"></div>
+
+                    <div class="relative w-full max-w-70 rounded-[3rem] border border-white/10 bg-[#0b1020] p-3 shadow-2xl">
+
+                        <div class="mb-4 flex justify-center">
+                            <div class="h-1.5 w-24 rounded-full bg-white/10"></div>
+                        </div>
+
+                        <div class="flex min-h-130 flex-col items-center justify-center rounded-[2.5rem] bg-bg p-8 text-center">
+
+                            <img src="/logo.png" alt="vera" class="w-28" />
+
+                            <h3 class="mt-8 bg-linear-to-r from-blue-500 to-indigo-500 bg-clip-text text-4xl font-bold text-transparent">
+                                vera
+                            </h3>
+
+                            <p class="mt-4 text-sm leading-relaxed text-text/60">
+                                Mantente al día con la evolución de la app.
+                            </p>
+
+                            <div class="mt-10 rounded-2xl border border-green-500/20 bg-green-500/10 px-5 py-4">
+
+                                <p class="text-sm text-green-300 flex items-center justify-center gap-2">
+
+                                    <span class="material-icons-round text-green-300 text-base">
+                                        check_circle
+                                    </span>
+
+                                    Actualizaciones activas
+
+                                </p>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>

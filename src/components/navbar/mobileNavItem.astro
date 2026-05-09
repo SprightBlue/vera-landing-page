@@ -1,0 +1,35 @@
+---
+interface Props {
+    href: string;
+    title: string;
+    description: string;
+    icon: string;
+}
+
+const { href, title, description, icon } = Astro.props;
+---
+
+<a
+        href={href}
+        class="group rounded-[1.5rem] border border-white/10 bg-white/5 p-5 transition hover:bg-blue-500/10"
+>
+
+    <div class="flex items-start justify-between">
+
+        <div>
+            <h3 class="font-semibold text-(--color-text)">
+                {title}
+            </h3>
+
+            <p class="mt-2 text-sm text-(--color-text)/50">
+                {description}
+            </p>
+        </div>
+
+        <span class="material-icons-round text-white/70 text-xl">
+      {icon}
+    </span>
+
+    </div>
+
+</a>

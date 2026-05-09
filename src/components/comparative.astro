@@ -1,190 +1,137 @@
 ---
 const antivirus = [
-    "Protección contra malware tradicional",
-    "Escaneo de archivos y sistema",
-    "Detección de virus conocidos",
-    "Protección del dispositivo",
+    "Protección contra malware y virus conocidos",
+    "Escaneo de archivos y descargas en el sistema",
+    "Defensa en tiempo real ante software malicioso",
+    "Actualizaciones de seguridad automáticas",
 ];
 
 const vera = [
-    "Detección de phishing conversacional",
-    "Análisis contextual de mensajes",
-    "Prevención de ingeniería social",
-    "Alertas antes de responder",
-    "Recomendaciones inteligentes",
-    "Protección en tiempo real",
+    "Detecta phishing y estafas conversacionales",
+    "Analiza mensajes en tiempo real",
+    "Previene ingeniería social y manipulación digital",
+    "Evalúa el riesgo antes de interactuar",
 ];
 ---
 
-<section
-        id="comparative"
-        class="relative overflow-hidden px-6 py-24 lg:px-20"
->
-    <!-- Background Glow -->
-    <div
-            class="absolute left-1/2 top-1/2 h-[500px] w-[500px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-blue-600/10 blur-3xl"
-    ></div>
+<section id="comparative" class="relative overflow-hidden px-6 py-24 lg:px-20">
+
+    <!-- Glow -->
+    <div class="absolute left-1/2 top-1/2 h-125 w-125 -translate-x-1/2 -translate-y-1/2 rounded-full bg-indigo-500/10 blur-[120px]"></div>
 
     <div class="relative mx-auto max-w-7xl">
-        <!-- Header -->
+
+        <!-- HEADER -->
         <div class="mx-auto max-w-3xl text-center">
-            <p
-                    class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400"
-            >
+
+            <p class="mb-4 text-sm font-medium uppercase tracking-[0.3em] text-blue-400">
                 Comparativa
             </p>
 
-            <h2
-                    class="font-[Montserrat] text-4xl font-extrabold leading-tight md:text-5xl"
-            >
-                Tu antivirus protege tu dispositivo.
-
-                <span
-                        class="mt-2 block bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-transparent"
-                >
-          VERA protege tus decisiones.
-        </span>
+            <h2 class="font-[Montserrat] text-4xl font-extrabold leading-tight md:text-5xl text-text">
+                Dos capas distintas de protección
             </h2>
 
-            <p
-                    class="mt-6 text-lg leading-relaxed text-slate-400"
-            >
-                VERA no reemplaza un antivirus tradicional.
-                Funciona como una capa inteligente adicional enfocada
-                en amenazas modernas basadas en manipulación humana.
+            <p class="mt-4 text-lg leading-relaxed text-text/60">
+                Los antivirus protegen tu dispositivo. Vera protege tus decisiones frente a engaños digitales.
             </p>
+
         </div>
 
-        <!-- Comparison -->
-        <div
-                class="mt-20 grid gap-8 lg:grid-cols-2"
-        >
-            <!-- Antivirus -->
-            <div
-                    class="rounded-[2rem] border border-white/10 bg-white/5 p-8 backdrop-blur-xl"
-            >
-                <!-- Header -->
-                <div class="mb-10">
-                    <div
-                            class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-white/10 text-3xl"
-                    >
-                        🖥️
-                    </div>
+        <!-- GRID -->
+        <div class="mt-20 grid gap-8 lg:grid-cols-2">
 
-                    <h3
-                            class="text-3xl font-bold"
-                    >
-                        Antivirus
-                    </h3>
+            <!-- ANTIVIRUS -->
+            <div class="rounded-[2rem] border border-(--glass-border) bg-(--glass-bg) p-8 backdrop-blur-xl">
 
-                    <p
-                            class="mt-3 text-slate-400"
-                    >
-                        Protección tradicional enfocada en software malicioso
-                        y amenazas del sistema operativo.
-                    </p>
-                </div>
+                <div class="flex items-center justify-between mb-6">
 
-                <!-- List -->
-                <div class="space-y-4">
-                    {
-                        antivirus.map((item) => (
-                                <div
-                                        class="flex items-start gap-4 rounded-2xl border border-white/5 bg-white/[0.03] p-4"
-                                >
-                                    <div
-                                            class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-white/10 text-sm"
-                                    >
-                                        ✓
-                                    </div>
+                    <div>
+                        <h3 class="text-3xl font-bold text-text">
+                            Antivirus
+                        </h3>
 
-                                    <p class="text-slate-300">
-                                        {item}
-                                    </p>
-                                </div>
-                        ))
-                    }
-
-                    <!-- Missing -->
-                    <div
-                            class="flex items-start gap-4 rounded-2xl border border-red-500/10 bg-red-500/5 p-4"
-                    >
-                        <div
-                                class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-red-500/20 text-sm text-red-300"
-                        >
-                            ✕
-                        </div>
-
-                        <p class="text-red-200">
-                            No analiza manipulación psicológica ni phishing conversacional.
+                        <p class="mt-2 text-text/60">
+                            Protección enfocada en amenazas del sistema y software.
                         </p>
                     </div>
+
+                    <img src="icons/antivirus.svg" alt="antivirus" class="h-12 w-12 opacity-40 object-contain" />
+
                 </div>
+
+                <div class="space-y-4">
+
+                    {antivirus.map((item) => (
+                            <div class="flex items-start gap-3 rounded-2xl border border-white/5 bg-white/3 p-4">
+
+                                <span class="material-icons-round text-green-400 text-xl mt-0.5">
+                                    check_circle
+                                </span>
+
+                                <p class="text-text/80">
+                                    {item}
+                                </p>
+
+                            </div>
+                    ))}
+
+                </div>
+
             </div>
 
-            <!-- VERA -->
-            <div
-                    class="relative overflow-hidden rounded-[2rem] border border-blue-500/20 bg-gradient-to-b from-blue-500/10 to-indigo-500/10 p-8 backdrop-blur-xl"
-            >
-                <!-- Glow -->
-                <div
-                        class="absolute right-0 top-0 h-40 w-40 rounded-full bg-blue-500/20 blur-3xl"
-                ></div>
+            <!-- vera -->
+            <div class="relative overflow-hidden rounded-[2rem] border border-blue-500/20 bg-linear-to-b from-blue-500/10 to-indigo-500/10 p-8 backdrop-blur-xl">
 
-                <!-- Header -->
-                <div class="relative mb-10">
-                    <div
-                            class="mb-5 flex h-16 w-16 items-center justify-center rounded-2xl bg-gradient-to-r from-[#0056db] to-[#1800ad] text-3xl shadow-lg shadow-blue-500/20"
-                    >
-                        🛡️
+                <div class="absolute right-0 top-0 h-40 w-40 rounded-full bg-indigo-500/20 blur-3xl"></div>
+
+                <div class="flex items-center justify-between mb-6">
+
+                    <div>
+                        <h3 class="text-4xl font-bold bg-linear-to-r from-blue-500 to-indigo-500 bg-clip-text text-transparent">
+                            vera
+                        </h3>
+
+                        <p class="mt-2 text-text/60">
+                            Una capa adicional enfocada en decisiones y comportamiento humano.
+                        </p>
                     </div>
 
-                    <h3
-                            class="bg-gradient-to-r from-blue-400 to-indigo-500 bg-clip-text text-3xl font-bold text-transparent"
-                    >
-                        VERA
-                    </h3>
+                    <img src="/logo.png" alt="vera" class="h-12 w-12 opacity-40 object-contain" />
 
-                    <p
-                            class="mt-3 text-slate-300"
-                    >
-                        Asistencia inteligente enfocada en proteger al usuario
-                        frente a engaños digitales modernos.
-                    </p>
                 </div>
 
-                <!-- List -->
-                <div class="relative space-y-4">
-                    {
-                        vera.map((item) => (
-                                <div
-                                        class="flex items-start gap-4 rounded-2xl border border-blue-500/10 bg-white/[0.04] p-4"
-                                >
-                                    <div
-                                            class="mt-1 flex h-6 w-6 items-center justify-center rounded-full bg-green-500/20 text-sm text-green-300"
-                                    >
-                                        ✓
-                                    </div>
+                <div class="space-y-4">
 
-                                    <p class="text-slate-200">
-                                        {item}
-                                    </p>
-                                </div>
-                        ))
-                    }
+                    {vera.map((item) => (
+                            <div class="flex items-start gap-3 rounded-2xl border border-blue-500/10 bg-white/5 p-4">
+
+                                <span class="material-icons-round text-green-400 text-xl mt-0.5">
+                                    check_circle
+                                </span>
+
+                                <p class="text-text/80">
+                                    {item}
+                                </p>
+
+                            </div>
+                    ))}
+
                 </div>
 
-                <!-- Bottom Note -->
-                <div
-                        class="relative mt-8 rounded-2xl border border-green-500/10 bg-green-500/10 p-5"
-                >
-                    <p class="text-sm leading-relaxed text-green-200">
-                        ✅ VERA actúa antes de que tomes una decisión peligrosa,
-                        ayudándote a identificar fraudes, engaños y manipulaciones
-                        digitales en tiempo real.
-                    </p>
-                </div>
             </div>
+
         </div>
+
+        <!-- Hook sentence -->
+        <div class="mt-16 mx-auto max-w-3xl text-center">
+
+            <p class="text-lg leading-relaxed text-text/60">
+                Vera no reemplaza un antivirus. Funciona como una capa complementaria de seguridad enfocada en lo que el software tradicional no detecta: la manipulación humana.
+            </p>
+
+        </div>
+
     </div>
+
 </section>
