@@ -1,0 +1,43 @@
+---
+const {
+    title,
+    description,
+    items,
+    icon
+} = Astro.props;
+---
+
+<div class="group relative overflow-hidden rounded-(--radius-3xl) border border-(--glass-border) bg-(--glass-bg) p-8 backdrop-blur-xl">
+
+    <img
+            src={icon}
+            alt="logo"
+            role="presentation"
+            class="absolute -right-4 -top-4 h-32 w-32 shrink-0 object-contain opacity-15 select-none"
+    />
+
+    <div class="relative z-10 mb-8">
+        <h3 class="font-[Montserrat] text-3xl font-bold leading-none text-text">
+            {title}
+        </h3>
+
+        <p class="mt-3 max-w-[85%] text-lg text-text/60">
+            {description}
+        </p>
+    </div>
+
+    <div class="relative z-10 space-y-3">
+        {items.map((item: string) => (
+                <div class="flex items-start gap-3 rounded-xl border border-(--glass-border) bg-(--glass-bg) p-4">
+
+                <span class="material-icons-round mt-0.5 text-xl text-success select-none">
+                    check_circle
+                </span>
+
+                    <p class="text-text/80 text-sm leading-snug">
+                        {item}
+                    </p>
+                </div>
+        ))}
+    </div>
+</div>
