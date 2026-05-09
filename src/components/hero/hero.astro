@@ -1,0 +1,14 @@
+---
+import HeroContent from "./heroContent.astro";
+import HeroPhone from "./heroPhone.astro";
+---
+
+<section class="relative overflow-hidden pt-28 pb-20 lg:pt-40 lg:pb-28">
+
+    <!-- Cambia el gap-14 por algo más amigable en móvil -->
+    <div class="mx-auto grid max-w-7xl items-center gap-8 px-4 sm:px-6 lg:grid-cols-2 lg:gap-20 lg:px-8">
+        <HeroContent />
+        <HeroPhone />
+    </div>
+
+</section>
