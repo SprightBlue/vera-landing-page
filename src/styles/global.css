@@ -57,6 +57,10 @@
     --color-success-border: rgba(34, 197, 94, 0.2);
 
     --color-accent-dot: #3b82f6;
+
+    /* --- Submit --- */
+    --submit-gradient: linear-gradient(135deg, #818cf8, #6366f1);
+    --submit-shadow: rgba(129, 140, 248, 0.3);
 }
 
 /* --- Base Styles --- */

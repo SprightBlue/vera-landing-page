@@ -1,0 +1,43 @@
+<form
+        id="newsletter-form"
+        class="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center lg:justify-start"
+>
+    <input
+            id="newsletter-email"
+            type="email"
+            placeholder="tuemail@ejemplo.com"
+            required
+            class="w-full rounded-2xl border border-(--glass-border) bg-(--glass-bg) px-5 py-4 text-text placeholder-text/30 outline-none backdrop-blur-md transition-all focus:border-accent-dot/40 sm:flex-1"
+    />
+
+    <button
+            id="newsletter-btn"
+            type="submit"
+            style="background: var(--submit-gradient); box-shadow: 0 10px 15px -3px var(--submit-shadow);"
+            class="w-full rounded-2xl px-8 py-4 font-[Montserrat] font-bold text-white transition-all duration-300 hover:scale-[1.03] hover:brightness-110 active:scale-[0.98] cursor-pointer sm:w-auto"
+    >
+        Suscribirme
+    </button>
+</form>
+
+<script is:inline>
+    const form = document.getElementById('newsletter-form');
+
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            if (typeof gtag === 'function') {
+                gtag('event', 'generate_lead', {
+                    'event_category': 'Newsletter',
+                    'event_label': 'Newsletter Vera App',
+                    'method': 'Newsletter Form Section'
+                });
+            }
+
+            alert('¡Gracias por suscribirte! Te mantendremos al tanto de las novedades.');
+
+            form.reset();
+        });
+    }
+</script>
