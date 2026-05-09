@@ -1,25 +1,51 @@
 <div class="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
 
     <a
-            href="#"
-            class="inline-block transition duration-300 hover:scale-[1.02] active:scale-95"
+            href="javascript:void(0);"
+            id="btn-google-play"
+            class="store-badge inline-block transition-all duration-300 hover:scale-[1.05] active:scale-95"
+            aria-label="Descargar en Google Play"
+            rel="noopener noreferrer"
     >
         <img
-                src="icons/google-play.svg"
+                src="/icons/google-play.svg"
                 alt="Google Play"
-                class="h-12 w-[160px] object-contain md:h-14 md:w-auto"
+                class="object-contain w-(--store-w-mobile) h-(--store-h-mobile) lg:w-(--store-w-desktop) lg:h-(--store-h-desktop)"
         />
     </a>
 
     <a
-            href="#"
-            class="inline-block transition duration-300 hover:scale-[1.02] active:scale-95"
+            href="javascript:void(0);"
+            id="btn-app-store"
+            class="store-badge inline-block transition-all duration-300 hover:scale-[1.05] active:scale-95"
+            aria-label="Descargar en App Store"
+            rel="noopener noreferrer"
     >
         <img
-                src="icons/apple-store.svg"
+                src="/icons/app-store.svg"
                 alt="App Store"
-                class="h-12 w-[160px] object-contain md:h-14 md:w-auto"
+                class="object-contain w-(--store-w-mobile) h-(--store-h-mobile) lg:w-(--store-w-desktop) lg:h-(--store-h-desktop)"
         />
     </a>
 
 </div>
+
+<script is:inline>
+    function trackBadgeClick(storeName) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'click_badge_tienda', {
+                'store_name': storeName,
+                'event_category': 'conversion',
+                'event_label': 'Download Badge'
+            });
+        }
+    }
+
+    document.getElementById('btn-google-play')?.addEventListener('click', () => {
+        trackBadgeClick('google_play');
+    });
+
+    document.getElementById('btn-app-store')?.addEventListener('click', () => {
+        trackBadgeClick('app_store');
+    });
+</script>
