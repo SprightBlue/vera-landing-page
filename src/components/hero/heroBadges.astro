@@ -1,0 +1,51 @@
+<div class="flex flex-wrap items-center justify-center gap-4 lg:justify-start">
+
+    <a
+            href="javascript:void(0);"
+            id="btn-google-play"
+            class="inline-block transition-all duration-300 hover:opacity-80 active:opacity-60 active:translate-y-0.5"
+            aria-label="Descargar en Google Play"
+            rel="noopener noreferrer"
+    >
+        <img
+                src="/badges/google-play.svg"
+                alt="Google Play"
+                class="object-contain w-41.25 h-12 lg:w-47.5 lg:h-14"
+        />
+    </a>
+
+    <a
+            href="javascript:void(0);"
+            id="btn-web-app"
+            class="inline-flex items-center justify-center gap-3 bg-black text-white border border-white/70 rounded-lg w-41.25 h-12 lg:w-47.5 lg:h-14 transition-all duration-300 hover:opacity-80 active:opacity-60 active:translate-y-0.5 box-border"
+            aria-label="Ir a la versión web"
+    >
+        <span class="material-icons-round text-[20px] lg:text-[24px]">public</span>
+
+        <div class="flex flex-col items-start leading-[1.1]">
+            <span class="text-[9px] lg:text-[10px] uppercase font-medium tracking-wider opacity-70">Acceder a la</span>
+            <span class="text-[13px] lg:text-[15px] font-bold whitespace-nowrap uppercase">Versión Web</span>
+        </div>
+    </a>
+
+</div>
+
+<script is:inline>
+    function trackBadgeClick(storeName) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'click_cta', {
+                'store_name': storeName,
+                'event_category': 'conversion',
+                'event_label': 'CTA Click'
+            });
+        }
+    }
+
+    document.getElementById('btn-google-play')?.addEventListener('click', () => {
+        trackBadgeClick('google_play');
+    });
+
+    document.getElementById('btn-web-app')?.addEventListener('click', () => {
+        trackBadgeClick('web_version');
+    });
+</script>

@@ -1,0 +1,22 @@
+---
+import WebSolutionItem from "./webSolutionItem.astro";
+
+const features = [
+    {
+        icon: "settings_suggest",
+        title: "Funciones Avanzadas",
+        description: "Configura reglas de filtrado personalizadas y niveles de sensibilidad de IA para cada una de tus cuentas vinculadas."
+    },
+    {
+        icon: "emergency_share",
+        title: "Contactos S.O.S.",
+        description: "Enlace directo con tus contactos de confianza para alertarlos automáticamente ante cualquier evento de riesgo crítico."
+    }
+];
+---
+
+<div class="space-y-4 max-w-md mx-auto lg:mx-0">
+    {features.map(feature => (
+            <WebSolutionItem {...feature} />
+    ))}
+</div>

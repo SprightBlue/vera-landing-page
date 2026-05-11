@@ -1,18 +1,22 @@
 ---
 import Layout from "../layouts/layout.astro";
-import Navbar from "../components/navbar/navbar.astro";
 import Hero from "../components/hero/hero.astro";
-import Features from "../components/features/features.astro";
-import Comparative from "../components/comparative/comparative.astro";
-import Newsletter from "../components/newsletter/newsletter.astro";
+import Problem from "../components/problem/problem.astro";
+import PhoneSolution from "../components/phone-solution/phoneSolution.astro";
+import WebSolution from "../components/web-solution/webSolution.astro";
 import Footer from "../components/footer.astro";
+import Cta from "../components/cta.astro";
+
+const pageTitle = "Vera - Tu asistente inteligente contra estafas";
 ---
 
-<Layout title="vera - Tu Asistente contra Estafas Digitales">
-	<Navbar />
-	<Hero />
-	<Features />
-	<Comparative />
-	<Newsletter />
+<Layout title={pageTitle}>
+	<main>
+		<Hero />
+		<Problem />
+		<PhoneSolution />
+		<WebSolution />
+		<Cta />
+	</main>
 	<Footer />
 </Layout>

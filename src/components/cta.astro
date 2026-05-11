@@ -1,0 +1,81 @@
+<section class="py-20 lg:py-32 relative overflow-hidden">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12">
+
+        <div class="relative bg-linear-to-br from-white/5 to-white/1 border border-white/10 rounded-[2.5rem] p-12 lg:p-24 overflow-hidden text-center">
+
+            <div class="absolute -left-10 top-1/2 -translate-y-1/2 w-64 h-125 border-2 border-white/5 rounded-[3rem] rotate-12 pointer-events-none hidden lg:block">
+                <div class="absolute top-4 left-1/2 -translate-x-1/2 w-20 h-1.5 bg-white/5 rounded-full"></div>
+            </div>
+
+            <div class="absolute -right-20 top-1/2 -translate-y-1/2 w-137.5 h-80 border-2 border-white/5 rounded-2xl -rotate-6 pointer-events-none hidden lg:block">
+                <div class="w-full h-8 border-b border-white/5 flex items-center px-4 gap-1.5">
+                    <div class="w-2 h-2 rounded-full bg-white/5"></div>
+                    <div class="w-2 h-2 rounded-full bg-white/5"></div>
+                </div>
+            </div>
+
+            <div class="relative z-10 max-w-3xl mx-auto space-y-12">
+                <div class="space-y-4">
+                    <h2 class="text-4xl lg:text-6xl font-display font-extrabold tracking-tight text-white leading-[1.1]">
+                        Tu seguridad no <br class="hidden lg:block"> <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">puede esperar</span>
+                    </h2>
+                    <p class="text-lg lg:text-xl text-white/60 font-medium max-w-xl mx-auto text-pretty">
+                        Únete a los miles de usuarios que ya protegen su vida digital con la inteligencia de Vera.
+                    </p>
+                </div>
+
+                <div class="flex flex-wrap items-center justify-center gap-6 lg:gap-8">
+
+                    <a
+                            href="javascript:void(0);"
+                            id="btn-cta-google-play"
+                            class="inline-block transition-all duration-300 hover:opacity-80 active:opacity-60 active:translate-y-0.5"
+                            aria-label="Descargar en Google Play"
+                    >
+                        <img
+                                src="/badges/google-play.svg"
+                                alt="Google Play"
+                                class="object-contain w-52.5 h-16 lg:w-62.5 lg:h-19"
+                        />
+                    </a>
+
+                    <a
+                            href="javascript:void(0);"
+                            id="btn-cta-web-app"
+                            class="inline-flex items-center justify-center gap-4 bg-black text-white border border-white/60 rounded-xl w-52.5 h-16 lg:w-62.5 lg:h-19 transition-all duration-300 hover:opacity-80 active:opacity-60 active:translate-y-0.5 shadow-2xl shadow-black/50 box-border"
+                            aria-label="Ir a la versión web"
+                    >
+                        <span class="material-icons-round text-[28px] lg:text-[34px]">public</span>
+                        <div class="flex flex-col items-start text-left leading-[1.1]">
+                            <span class="text-[10px] lg:text-[11px] uppercase font-bold tracking-wider opacity-60">Acceder a la</span>
+                            <span class="text-[16px] lg:text-[19px] font-black uppercase whitespace-nowrap">Versión Web</span>
+                        </div>
+                    </a>
+
+                </div>
+            </div>
+
+            <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(59,130,246,0.08)_0%,transparent_70%)] pointer-events-none"></div>
+        </div>
+    </div>
+</section>
+
+<script is:inline>
+    function trackCtaClick(storeName) {
+        if (typeof gtag === 'function') {
+            gtag('event', 'click_cta_final', {
+                'store_name': storeName,
+                'event_category': 'conversion',
+                'event_label': 'Bottom CTA Click'
+            });
+        }
+    }
+
+    document.getElementById('btn-cta-google-play')?.addEventListener('click', () => {
+        trackCtaClick('google_play_bottom');
+    });
+
+    document.getElementById('btn-cta-web-app')?.addEventListener('click', () => {
+        trackCtaClick('web_version_bottom');
+    });
+</script>
