@@ -1,0 +1,32 @@
+---
+const navLinks = [
+    { href: "#problem", label: "El Peligro" },
+    { href: "#phone", label: "En el Celular" },
+    { href: "#web", label: "En la Computadora" },
+];
+---
+
+<nav
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-bg/95 backdrop-blur-xl px-6 py-8 md:hidden"
+>
+    <div class="grid grid-cols-2 gap-3">
+        {
+            navLinks.map(({ href, label }) => (
+                    <a
+                            href={href}
+                            class="flex items-center justify-center rounded-xl border p-4 text-sm font-bold tracking-tight transition-colors active:scale-[0.98] border-white/10 bg-white/5 text-white active:bg-white/10"
+                    >
+                            {label}
+                    </a>
+            ))
+        }
+
+        <a
+                href="#cta"
+                class="flex items-center justify-center rounded-xl border p-4 text-sm font-bold tracking-tight transition-colors active:scale-[0.98] border-indigo-400/30 bg-indigo-500/10 text-indigo-100 active:bg-indigo-500/20"
+        >
+                Comenzar
+        </a>
+    </div>
+</nav>

@@ -1,64 +1,75 @@
 ---
-import NavbarDesktop from "./navbarDesktop.astro";
-import NavbarPhone from "./navbarPhone.astro";
+import DesktopNav from "./desktopNav.astro";
+import MobileNav from "./mobileNav.astro";
+
+const isotipoSrc = "/brand/isologo-vera.png";
+const logotipoSrc = "/brand/nombre-vera.png";
 ---
 
-<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-bg/90">
-
-    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-bg/80 backdrop-blur-md">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-12">
 
         <div class="flex items-center">
-            <a
-                    href="#hero"
-                    class="block"
-                    aria-label="Vera - Ir al inicio"
-            >
+            <a href="#hero" class="group flex items-center gap-3 h-10 lg:h-12" aria-label="Vera - Ir al inicio">
                 <img
-                        src="brand/logotipo-vera-2.png"
-                        alt="Vera Logo"
-                        class="w-16 h-auto lg:w-20 select-none"
-                        width="80"
-                        height="80"
+                        src={isotipoSrc}
+                        alt="Vera Isotipo"
+                        class="h-full w-auto object-contain select-none transition-transform group-hover:scale-105"
+                        width="48"
+                        height="48"
                         loading="eager"
-                        decoding="async"
+                        decoding="sync"
+                />
+                <img
+                        src={logotipoSrc}
+                        alt="Vera Logotipo"
+                        class="h-[80%] w-auto object-contain select-none opacity-90"
+                        width="120"
+                        height="40"
+                        loading="eager"
+                        decoding="sync"
                 />
             </a>
         </div>
 
-        <NavbarDesktop />
+        <DesktopNav />
 
         <button
                 id="menu-btn"
-                class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-white md:hidden"
-                aria-label="Abrir menú"
+                class="flex size-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden hover:bg-white/10 transition-colors"
+                aria-label="Alternar menú"
         >
-            <span class="material-icons-round text-xl">menu</span>
+            <svg id="menu-icon" class="block" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
+            </svg>
+            <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
+                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
+            </svg>
         </button>
 
     </div>
 
-    <NavbarPhone />
-
+    <MobileNav />
 </header>
 
-<script is:inline>
+<script>
     const menuBtn = document.getElementById("menu-btn");
     const mobileMenu = document.getElementById("mobile-menu");
+    const menuIcon = document.getElementById("menu-icon");
+    const closeIcon = document.getElementById("close-icon");
 
     if (menuBtn && mobileMenu) {
-        const icon = menuBtn.querySelector("span");
-
         menuBtn.addEventListener("click", () => {
             const isHidden = mobileMenu.classList.toggle("hidden");
-            if (icon) {
-                icon.textContent = isHidden ? "menu" : "close";
-            }
+            menuIcon?.classList.toggle("hidden", !isHidden);
+            closeIcon?.classList.toggle("hidden", isHidden);
         });
 
         mobileMenu.addEventListener("click", (e) => {
-            if (e.target.tagName === 'A' || e.target.closest('a')) {
+            if ((e.target as HTMLElement).closest('a')) {
                 mobileMenu.classList.add("hidden");
-                if (icon) icon.textContent = "menu";
+                menuIcon?.classList.remove("hidden");
+                closeIcon?.classList.add("hidden");
             }
         });
     }
