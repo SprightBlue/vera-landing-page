@@ -1,0 +1,65 @@
+---
+import NavbarDesktop from "./navbarDesktop.astro";
+import NavbarPhone from "./navbarPhone.astro";
+---
+
+<header class="fixed top-0 z-50 w-full border-b border-white/10 bg-bg/90">
+
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-12">
+
+        <div class="flex items-center">
+            <a
+                    href="#hero"
+                    class="block"
+                    aria-label="Vera - Ir al inicio"
+            >
+                <img
+                        src="brand/logotipo-vera-2.png"
+                        alt="Vera Logo"
+                        class="w-16 h-auto lg:w-20 select-none"
+                        width="80"
+                        height="80"
+                        loading="eager"
+                        decoding="async"
+                />
+            </a>
+        </div>
+
+        <NavbarDesktop />
+
+        <button
+                id="menu-btn"
+                class="flex h-11 w-11 items-center justify-center rounded-xl border border-white/10 bg-white/[0.03] text-white md:hidden"
+                aria-label="Abrir menú"
+        >
+            <span class="material-icons-round text-xl">menu</span>
+        </button>
+
+    </div>
+
+    <NavbarPhone />
+
+</header>
+
+<script is:inline>
+    const menuBtn = document.getElementById("menu-btn");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    if (menuBtn && mobileMenu) {
+        const icon = menuBtn.querySelector("span");
+
+        menuBtn.addEventListener("click", () => {
+            const isHidden = mobileMenu.classList.toggle("hidden");
+            if (icon) {
+                icon.textContent = isHidden ? "menu" : "close";
+            }
+        });
+
+        mobileMenu.addEventListener("click", (e) => {
+            if (e.target.tagName === 'A' || e.target.closest('a')) {
+                mobileMenu.classList.add("hidden");
+                if (icon) icon.textContent = "menu";
+            }
+        });
+    }
+</script>

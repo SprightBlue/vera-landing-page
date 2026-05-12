@@ -3,7 +3,7 @@ import HeroBadges from "@/components/hero/heroBadges.astro";
 const heroImageUrl = "/images/hero-image.jpg";
 ---
 
-<section class="relative bg-transparent overflow-hidden py-20 lg:py-32 min-h-[85vh] flex items-center">
+<section id="hero" class="relative overflow-hidden py-20 lg:py-32 min-h-[85vh] flex items-center">
 
     <div
             class="absolute inset-0 z-0
@@ -16,9 +16,8 @@ const heroImageUrl = "/images/hero-image.jpg";
                 alt=""
                 role="presentation"
                 fetchpriority="high"
-                loading="eager"
-                width="1920"
-                height="1080"
+                width= auto
+                height= auto
                 class="w-full h-full object-cover object-center lg:object-[right_25%] opacity-70"
         />
     </div>

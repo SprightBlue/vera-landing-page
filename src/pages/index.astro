@@ -1,5 +1,6 @@
 ---
 import Layout from "../layouts/layout.astro";
+import Navbar from "../components/navbar/navbar.astro";
 import Hero from "../components/hero/hero.astro";
 import Problem from "../components/problem/problem.astro";
 import PhoneSolution from "../components/phone-solution/phoneSolution.astro";
@@ -11,6 +12,7 @@ const pageTitle = "Vera - Tu asistente inteligente contra estafas";
 ---
 
 <Layout title={pageTitle}>
+	<Navbar />
 	<main>
 		<Hero />
 		<Problem />

@@ -1,0 +1,43 @@
+---
+import NavbarItem from "./navbarItem.astro";
+
+const items = [
+    {
+        href: "#problem",
+        icon: "report_problem",
+        title: "Problema",
+    },
+    {
+        href: "#phone",
+        icon: "phonelink_setup",
+        title: "Solución",
+    },
+    {
+        href: "#web",
+        icon: "workspace_premium",
+        title: "Premium",
+    },
+    {
+        href: "#cta",
+        icon: "rocket_launch",
+        title: "Comenzar",
+    },
+];
+---
+
+<div
+        id="mobile-menu"
+        class="hidden border-t border-white/10 bg-[#0a0f1e] px-6 py-8 md:hidden isolate"
+>
+    <div class="grid grid-cols-2 gap-4">
+        {
+            items.map((item) => (
+                    <NavbarItem
+                            href={item.href}
+                            icon={item.icon}
+                            title={item.title}
+                    />
+            ))
+        }
+    </div>
+</div>

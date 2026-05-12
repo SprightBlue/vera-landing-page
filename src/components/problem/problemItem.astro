@@ -16,8 +16,8 @@ const { image, title, description, alt = ""} = Astro.props;
         <img
                 src={image}
                 alt={alt}
-                width="400"
-                height="225"
+                width=auto
+                height=auto
                 decoding="async"
                 class="object-cover w-full h-full opacity-60 grayscale-20"
         />
