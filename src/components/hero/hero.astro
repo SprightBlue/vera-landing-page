@@ -1,39 +1,47 @@
 ---
 import HeroBadges from "@/components/hero/heroBadges.astro";
+const heroImageUrl = "/images/hero-image.jpg";
 ---
 
-<section class="relative bg-bg overflow-hidden py-20 lg:py-32 min-h-175 flex items-center">
+<section class="relative bg-transparent overflow-hidden py-20 lg:py-32 min-h-[85vh] flex items-center">
 
-    <div class="absolute inset-0 z-0 mask-[radial-gradient(150%_100%_at_50%_0%,black_80%,transparent_100%)]">
+    <div
+            class="absolute inset-0 z-0
+               after:absolute after:inset-0 after:bg-linear-to-r after:from-bg after:via-bg/40 after:to-transparent
+               before:absolute before:inset-x-0 before:bottom-0 before:h-64 before:bg-linear-to-t before:from-bg before:via-bg/80 before:to-transparent before:z-10"
+            aria-hidden="true"
+    >
         <img
-                src="/images/hero-image.jpg"
-                alt="Adulto mayor utilizando Vera"
-                class="w-full h-full object-cover object-center lg:object-[right_25%]"
+                src={heroImageUrl}
+                alt=""
+                role="presentation"
+                fetchpriority="high"
+                loading="eager"
+                width="1920"
+                height="1080"
+                class="w-full h-full object-cover object-center lg:object-[right_25%] opacity-70"
         />
-        <div class="absolute inset-0 bg-linear-to-t from-bg via-bg/70 to-bg/30 lg:bg-linear-to-r lg:from-bg lg:via-bg/40 lg:to-transparent"></div>
     </div>
 
-    <div class="relative z-10 mx-auto grid max-w-7xl items-center px-6 lg:grid-cols-2 lg:gap-20 lg:px-12 w-full">
-        <div class="flex justify-center lg:justify-start">
-            <div class="max-w-xl">
-                <div class="space-y-6 md:space-y-8 text-center lg:text-left">
+    <div class="relative z-10 mx-auto max-w-7xl px-6 lg:px-12 w-full">
+        <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
 
-                    <h1 class="text-4xl font-extrabold leading-[1.1] text-white lg:text-5xl tracking-tight text-balance">
-                        <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">Tu Asistente</span> Inteligente contra Estafas
-                    </h1>
+            <div class="lg:col-span-7 space-y-6 md:space-y-8 text-center lg:text-left">
+                <h1 class="text-4xl font-display font-extrabold leading-[1.1] text-white lg:text-6xl tracking-tight text-balance">
+                    <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent inline-block">
+                        Tu Asistente
+                    </span> Inteligente contra Estafas
+                </h1>
 
-                    <p class="mx-auto max-w-lg text-base leading-relaxed text-white/90 sm:text-lg lg:mx-0 lg:max-w-xl lg:text-xl text-pretty">
-                        Vera analiza mensajes, identifica links sospechosos y te guía para tomar decisiones seguras online. Sin jerga técnica, solo protección clara y simple.
-                    </p>
+                <p class="mx-auto max-w-lg text-lg text-white/80 lg:mx-0 lg:max-w-xl lg:text-xl text-pretty font-medium">
+                    Vera analiza mensajes, identifica links sospechosos y te guía para tomar decisiones seguras online. Sin jerga técnica, solo protección clara y simple.
+                </p>
 
-                    <div class="pt-4 flex justify-center lg:justify-start">
-                        <HeroBadges />
-                    </div>
+                <div class="pt-4 flex justify-center lg:justify-start">
+                    <HeroBadges />
                 </div>
             </div>
+
         </div>
-
-        <div class="hidden lg:block"></div>
     </div>
-
 </section>

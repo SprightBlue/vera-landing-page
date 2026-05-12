@@ -16,7 +16,11 @@ const features = [
 ---
 
 <div class="space-y-4 max-w-md mx-auto lg:mx-0">
-    {features.map(feature => (
-            <WebSolutionItem {...feature} />
+    {features.map((feature) => (
+            <WebSolutionItem
+                    icon={feature.icon}
+                    title={feature.title}
+                    description={feature.description}
+            />
     ))}
 </div>
