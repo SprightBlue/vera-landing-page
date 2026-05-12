@@ -10,7 +10,7 @@ const logotipoSrc = "/brand/nombre-vera.png";
     <div class="mx-auto flex max-w-7xl items-center justify-between px-6 py-3 lg:px-12">
 
         <div class="flex items-center">
-            <a href="#hero" class="group flex items-center gap-3 h-10 lg:h-12">
+            <a href="#hero" class="group flex items-center gap-3 h-10 lg:h-12 transition-opacity hover:opacity-80">
                 <img
                         src={isotipoSrc}
                         alt="Vera Isotipo"
@@ -21,7 +21,7 @@ const logotipoSrc = "/brand/nombre-vera.png";
                 <img
                         src={logotipoSrc}
                         alt="Vera Logotipo"
-                        class="h-[80%] w-auto object-contain select-none opacity-90"
+                        class="h-[75%] w-auto object-contain select-none opacity-90"
                         width="120"
                         height="40"
                 />
@@ -32,14 +32,12 @@ const logotipoSrc = "/brand/nombre-vera.png";
 
         <button
                 id="menu-btn"
-                class="flex size-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden hover:bg-white/10 transition-colors"
+                class="group flex size-11 items-center justify-center rounded-xl border border-white/10 bg-white/5 text-white md:hidden hover:bg-white/10 transition-all active:scale-95 outline-none"
+                aria-label="Menú"
         >
-            <svg id="menu-icon" class="block" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
-                <path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/>
-            </svg>
-            <svg id="close-icon" class="hidden" xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 -960 960 960" width="24" fill="currentColor">
-                <path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/>
-            </svg>
+            <span id="menu-icon-container" class="material-icons-round text-2xl transition-all duration-200 ease-out">
+                menu
+            </span>
         </button>
 
     </div>
@@ -47,25 +45,60 @@ const logotipoSrc = "/brand/nombre-vera.png";
     <MobileNav />
 </header>
 
-<script>
-    const menuBtn = document.getElementById("menu-btn");
-    const mobileMenu = document.getElementById("mobile-menu");
-    const menuIcon = document.getElementById("menu-icon");
-    const closeIcon = document.getElementById("close-icon");
+<script is:inline>
+    (function() {
+        const menuBtn = document.getElementById("menu-btn");
+        const iconContainer = document.getElementById("menu-icon-container");
+        const mobileMenu = document.getElementById("mobile-menu");
 
-    if (menuBtn && mobileMenu) {
-        menuBtn.addEventListener("click", () => {
-            const isHidden = mobileMenu.classList.toggle("hidden");
-            menuIcon?.classList.toggle("hidden", !isHidden);
-            closeIcon?.classList.toggle("hidden", isHidden);
-        });
+        const toggleMenu = (forceClose = false) => {
+            const isMenuOpen = !mobileMenu.classList.contains("hidden");
 
-        mobileMenu.addEventListener("click", (e) => {
-            if ((e.target as HTMLElement).closest('a')) {
-                mobileMenu.classList.add("hidden");
-                menuIcon?.classList.remove("hidden");
-                closeIcon?.classList.add("hidden");
+            iconContainer.style.opacity = "0";
+            iconContainer.style.transform = "scale(0.8)";
+
+            setTimeout(() => {
+                if (isMenuOpen || forceClose) {
+                    mobileMenu.classList.add("hidden");
+                    iconContainer.textContent = "menu";
+                } else {
+                    mobileMenu.classList.remove("hidden");
+                    iconContainer.textContent = "close";
+                }
+
+                iconContainer.style.opacity = "1";
+                iconContainer.style.transform = "scale(1)";
+            }, 150);
+        };
+
+        if (menuBtn && mobileMenu && iconContainer) {
+            menuBtn.addEventListener("click", (e) => {
+                e.stopPropagation();
+                toggleMenu();
+            });
+
+            mobileMenu.addEventListener("click", (e) => {
+                if (e.target.closest('a')) toggleMenu(true);
+            });
+        }
+
+        //google analytics tracking
+        const trackNav = (eventLabel, origin) => {
+            if (typeof gtag === 'function') {
+                gtag('event', 'get_started_click', {
+                    'event_category': 'conversion',
+                    'event_label': eventLabel,
+                    'nav_origin': origin
+                });
             }
+        };
+
+        document.addEventListener('click', (e) => {
+            const desktopBtn = e.target.closest('#desktop-start-btn');
+            const mobileBtn = e.target.closest('#mobile-start-btn');
+
+            if (desktopBtn) trackNav('Desktop Navigation', 'desktop');
+            if (mobileBtn) trackNav('Mobile Menu', 'mobile');
         });
-    }
+    })();
 </script>

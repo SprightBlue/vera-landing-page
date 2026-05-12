@@ -1,0 +1,38 @@
+---
+const features = [
+    {
+        icon: "settings_suggest",
+        title: "Funciones Avanzadas",
+        description: "Configura reglas de filtrado personalizadas y niveles de sensibilidad de IA para cada una de tus cuentas vinculadas."
+    },
+    {
+        icon: "emergency_share",
+        title: "Contactos S.O.S.",
+        description: "Enlace directo con tus contactos de confianza para alertarlos automáticamente ante cualquier evento de riesgo crítico."
+    }
+];
+---
+
+<div class="flex flex-col gap-4 w-full max-w-md mx-auto lg:mx-0">
+    {features.map(({ icon, title, description }) => (
+            <article class="group relative flex items-start gap-4 p-5 rounded-2xl border border-white/10 bg-white/1 backdrop-blur-sm transition-all duration-500 hover:border-primary/25 hover:bg-white/3
+                        after:absolute after:bottom-0 after:left-5 after:right-5 after:h-px after:bg-linear-to-r after:from-transparent after:via-primary/20 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500">
+
+                <div class="relative shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center border border-primary/20
+                        before:absolute before:inset-0 before:rounded-lg before:bg-primary/5 before:opacity-0 group-hover:before:opacity-100 before:transition-opacity">
+                <span class="material-icons-round text-primary text-[22px] relative z-10">
+                    {icon}
+                </span>
+                </div>
+
+                <div class="space-y-1">
+                    <h3 class="text-white font-bold text-base leading-tight tracking-tight transition-colors duration-300 group-hover:text-primary">
+                        {title}
+                    </h3>
+                    <p class="text-xs text-white/50 leading-relaxed font-medium transition-colors duration-300 group-hover:text-white/70 text-pretty">
+                        {description}
+                    </p>
+                </div>
+            </article>
+    ))}
+</div>

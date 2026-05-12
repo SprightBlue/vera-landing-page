@@ -1,8 +1,8 @@
 ---
 const navLinks = [
-    { href: "#danger", label: "Riesgos Digitales" },
-    { href: "#phone", label: "En tu Celular" },
-    { href: "#web", label: "En tu Navegador" },
+    { href: "#risks", label: "Riesgos Digitales" },
+    { href: "#mobile", label: "En tu Celular" },
+    { href: "#web", label: "Funciones Web" },
 ];
 ---
 
@@ -10,33 +10,18 @@ const navLinks = [
     {navLinks.map(({ href, label }) => (
             <a
                     href={href}
-                    class="group relative py-1 text-sm font-medium text-white/60 transition-colors hover:text-white"
+                    class="relative py-1 text-sm font-medium text-white/60 transition-colors hover:text-white
+                   after:absolute after:bottom-0 after:left-0 after:h-px after:w-0 after:bg-white/40 after:transition-all after:duration-300 hover:after:w-full"
             >
                 {label}
-                <span class="absolute inset-x-0 bottom-0 h-px w-0 bg-white/40 transition-all duration-300 group-hover:w-full"></span>
             </a>
     ))}
 
     <a
             id="desktop-start-btn"
             href="#cta"
-            class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-indigo-400/30 bg-indigo-500/10 text-indigo-100 text-sm font-bold transition-colors hover:bg-indigo-500/20 hover:border-indigo-400/50"
+            class="inline-flex items-center justify-center px-5 py-2.5 rounded-xl border border-primary/30 bg-primary/10 text-primary-light text-sm font-bold transition-all duration-300 hover:bg-primary/20 hover:border-primary/50 outline-none active:scale-95"
     >
-        Comenzar
+        Protegerse Ahora
     </a>
 </nav>
-
-<script is:inline>
-    const startBtn = document.getElementById('desktop-start-btn');
-
-    if (startBtn) {
-        startBtn.addEventListener('click', () => {
-            if (typeof window.gtag !== 'undefined') {
-                window.gtag('event', 'desktop_get_started_click', {
-                    'event_category': 'conversion',
-                    'event_label': 'Desktop Navigation'
-                });
-            }
-        });
-    }
-</script>

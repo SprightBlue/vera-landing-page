@@ -1,0 +1,30 @@
+---
+import MobileFeatures from "./mobileFeatures.astro";
+import MobileMockup from "./mobileMockup.astro";
+---
+
+<section id="mobile" class="relative py-24 lg:py-32 overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+
+            <header class="lg:col-span-4 space-y-6 text-center lg:text-left">
+                <h2 class="text-4xl lg:text-5xl font-display font-extrabold leading-tight tracking-tight text-white">
+                    <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Tranquilidad</span>
+                     a él alcance de tus mano
+                </h2>
+                <p class="text-lg text-white/70 font-medium text-pretty leading-relaxed">
+                    Vera funciona como un filtro inteligente en su celular que revisa los mensajes por usted, para que pueda conectar con los suyos sin preocupaciones.
+                </p>
+            </header>
+
+            <div class="lg:col-span-4 flex justify-center order-last lg:order-0">
+                <MobileMockup />
+            </div>
+
+            <div class="lg:col-span-4">
+                <MobileFeatures />
+            </div>
+
+        </div>
+    </div>
+</section>

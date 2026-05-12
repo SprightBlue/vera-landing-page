@@ -1,0 +1,32 @@
+---
+import WebFeatures from "./webFeatures.astro";
+import WebMockup from "./webMockup.astro";
+---
+
+<section id="web" class="relative py-24 lg:py-32 overflow-hidden">
+    <div class="relative z-10 max-w-7xl mx-auto px-6 lg:px-12
+                before:absolute before:top-1/2 before:-left-1/4 before:-translate-y-1/2 before:w-96 before:h-96 before:bg-primary/5 before:blur-[120px] before:rounded-full before:pointer-events-none">
+
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-center">
+
+            <div class="lg:col-span-7 relative group order-last lg:order-0">
+                <WebMockup />
+            </div>
+
+            <div class="lg:col-span-5 space-y-10">
+                <header class="space-y-6 text-center lg:text-left">
+                    <h2 class="text-4xl lg:text-5xl font-display font-extrabold leading-tight tracking-tight text-white">
+                        Control Total <br />
+                        <span class="bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent">Panel Web</span>
+                    </h2>
+                    <p class="text-lg text-white/70 font-medium text-pretty leading-relaxed">
+                        Gestiona la seguridad de toda tu familia desde un solo lugar. Configura alertas, revisa historiales y personaliza la protección de Vera para cada dispositivo vinculado.
+                    </p>
+                </header>
+
+                <WebFeatures />
+            </div>
+
+        </div>
+    </div>
+</section>

@@ -1,0 +1,43 @@
+---
+const flow = [
+    {
+        icon: "content_copy",
+        title: "Recibe",
+        description: "Simplemente copia el mensaje sospechoso o deja que Vera detecte la notificación entrante de forma automática."
+    },
+    {
+        icon: "psychology",
+        title: "Analiza",
+        description: "Nuestro motor de IA procesa el contenido, verifica enlaces y contrasta con bases de datos de fraude globales."
+    },
+    {
+        icon: "security",
+        title: "Recomienda",
+        description: "Recibes una guía clara: qué hacer, cómo bloquear y qué precauciones tomar para mantener tu seguridad."
+    }
+];
+---
+
+<div class="flex flex-col gap-6 w-full max-w-lg mx-auto lg:mx-0">
+    {flow.map(({ icon, title, description }) => (
+            <article class="group relative flex items-start gap-5 p-6 rounded-2xl border border-white/10 bg-white/1 backdrop-blur-sm transition-all duration-500 hover:border-primary/25 hover:bg-white/3
+                        after:absolute after:bottom-0 after:left-6 after:right-6 after:h-px after:bg-linear-to-r after:from-transparent after:via-primary/20 after:to-transparent after:opacity-0 hover:after:opacity-100 after:transition-opacity after:duration-500">
+
+                <div class="relative shrink-0 w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center border border-primary/20
+                        before:absolute before:inset-0 before:rounded-xl before:bg-primary/5 before:opacity-0 group-hover:before:opacity-100 before:transition-opacity">
+                <span class="material-icons-round text-primary text-2xl relative z-10" aria-hidden="true">
+                    {icon}
+                </span>
+                </div>
+
+                <div class="space-y-1.5">
+                    <h3 class="text-white font-bold text-lg leading-tight tracking-tight transition-colors duration-300 group-hover:text-primary">
+                        {title}
+                    </h3>
+                    <p class="text-[0.9rem] text-white/50 leading-relaxed font-medium transition-colors duration-300 group-hover:text-white/70 text-pretty">
+                        {description}
+                    </p>
+                </div>
+            </article>
+    ))}
+</div>

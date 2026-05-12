@@ -1,15 +1,15 @@
-<footer id="footer" class="relative px-6 py-12 lg:px-12 overflow-hidden">
+---
+const currentYear = new Date().getFullYear();
+---
 
-    <div class="mx-auto max-w-7xl">
-
-        <div class="h-px w-full bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-
-        <div class="mt-10 text-center relative z-10">
-            <p class="text-[10px] tracking-[0.2em] uppercase text-white/30 md:text-xs font-medium">
-                © 2026 Vera. Todos los derechos reservados.
-            </p>
-        </div>
-
+<footer
+        id="footer"
+        class="relative px-6 py-12 lg:px-12 overflow-hidden
+           before:absolute before:top-0 before:left-1/2 before:-translate-x-1/2 before:w-full before:max-w-7xl before:h-px before:bg-linear-to-r before:from-transparent before:via-white/10 before:to-transparent"
+>
+    <div class="mx-auto max-w-7xl text-center relative z-10">
+        <p class="text-[10px] md:text-xs tracking-[0.2em] uppercase text-white/30 font-medium">
+            © {currentYear} Vera. Todos los derechos reservados.
+        </p>
     </div>
-
 </footer>

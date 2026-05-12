@@ -1,0 +1,72 @@
+<div class="relative flex w-full justify-center py-10 lg:py-0
+            before:absolute before:inset-0 before:flex before:items-center before:justify-center before:z-0 before:pointer-events-none
+            before:content-[''] before:bg-[radial-gradient(circle,rgba(59,130,246,0.12)_0%,transparent_70%)] before:rounded-full before:w-96 before:h-96">
+
+    <article class="relative z-10 w-full max-w-70 rounded-[3rem] border border-white/10 bg-[#0d1225] p-3 shadow-2xl
+                    after:absolute after:inset-y-12 after:left-0 after:w-px after:bg-linear-to-b after:from-transparent after:via-white/10 after:to-transparent after:pointer-events-none
+                    transition-all duration-500 hover:border-primary/30">
+
+        <header class="mb-4 flex justify-center">
+            <div class="h-1.5 rounded-full bg-white/20 w-16"></div>
+        </header>
+
+        <div class="relative overflow-hidden rounded-[2.2rem] bg-bg border border-white/5 p-4 shadow-inner">
+
+            <div class="flex items-center gap-3 border-b border-white/10 pb-4">
+                <div class="h-10 w-10 shrink-0 rounded-full bg-white/5 flex items-center justify-center border border-white/10">
+                    <span class="material-icons-round text-white/40 text-xl">person</span>
+                </div>
+                <div class="min-w-0 text-left">
+                    <p class="truncate font-medium text-white/90 text-sm">Número desconocido</p>
+                    <p class="text-[11px] text-white/40 flex items-center gap-1.5">
+                        <span class="h-1.5 w-1.5 rounded-full bg-green-500"></span>
+                        en línea
+                    </p>
+                </div>
+            </div>
+
+            <div class="mt-6 space-y-4">
+                <div class="ml-auto max-w-[92%] rounded-2xl rounded-br-none bg-white/5 border border-white/5 p-4 text-left">
+                    <p class="text-[12px] leading-relaxed text-white/70">
+                        Hola, necesitamos validar tu cuenta urgente. Ingresá aquí para evitar el bloqueo:
+                    </p>
+                    <p class="mt-2 break-all text-[12px] font-medium text-blue-400 underline underline-offset-4 italic">
+                        secure-verification-login.net
+                    </p>
+                </div>
+
+                <div class="relative rounded-2xl border border-red-500/30 bg-red-500/10 p-4 text-left overflow-hidden">
+                    <div class="mb-3 flex items-center justify-between gap-4">
+                        <div class="flex min-w-0 items-center gap-2">
+                            <img
+                                    src="/brand/isologo-vera.png"
+                                    class="w-4 h-auto shrink-0"
+                                    alt="Logo Vera"
+                                    width="300"
+                                    height="300"
+                            />
+                            <span class="truncate font-bold tracking-tight bg-linear-to-r from-primary to-secondary bg-clip-text text-transparent text-[11px]">Vera</span>
+                        </div>
+                        <span class="shrink-0 text-[8px] font-black uppercase tracking-widest text-red-500">ALERTA</span>
+                    </div>
+
+                    <p class="text-[11px] font-semibold text-red-200">
+                        Posible intento de phishing detectado.
+                    </p>
+
+                    <div class="mt-4 rounded-xl border border-green-500/20 bg-green-500/10 p-3">
+                        <p class="text-[8px] font-bold uppercase tracking-wider text-green-400">Recomendación</p>
+                        <p class="mt-1 text-[10.5px] leading-relaxed text-green-100/90 font-medium">
+                            No abras el enlace. Bloqueá el remitente y reportá el mensaje.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-6 rounded-xl border border-white/5 bg-white/5 px-4 py-2.5 text-[11px] text-white/20 flex justify-between items-center">
+                <span>Escribir mensaje...</span>
+                <span class="material-icons-round text-base">send</span>
+            </div>
+        </div>
+    </article>
+</div>
