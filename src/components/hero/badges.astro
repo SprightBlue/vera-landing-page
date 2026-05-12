@@ -1,0 +1,55 @@
+<div class="flex flex-wrap items-center justify-center gap-4 lg:justify-start min-h-14">
+    <a
+            href="javascript:void(0);"
+            id="btn-google-play"
+            class="inline-block transition-opacity hover:opacity-80 active:opacity-60 active:translate-y-0.5 outline-none focus:outline-none focus:ring-0 rounded-lg"
+    >
+        <img
+                src="/badges/google-play.svg"
+                alt="Google Play"
+                width="190"
+                height="56"
+                class="object-contain w-41.25 h-12 lg:w-47.5 lg:h-14"
+        />
+    </a>
+
+    <a
+            href="javascript:void(0);"
+            id="btn-web-app"
+            class="inline-flex items-center justify-center gap-3 bg-black text-white border border-white/70 rounded-lg w-41.25 h-12 lg:w-47.5 lg:h-14 transition-all hover:opacity-80 active:opacity-60 active:translate-y-0.5 outline-none focus:outline-none focus:ring-0"
+    >
+        <div class="flex flex-col items-start leading-tight text-left">
+            <span class="text-[9px] lg:text-[10px] uppercase font-medium tracking-wider opacity-70">Acceder a La</span>
+            <span class="text-[13px] lg:text-[15px] font-bold whitespace-nowrap uppercase text-white">Versión Web</span>
+        </div>
+    </a>
+</div>
+
+<script is:inline>
+    const googleBtn = document.getElementById('btn-google-play');
+    const webBtn = document.getElementById('btn-web-app');
+
+    if (googleBtn) {
+        googleBtn.addEventListener('click', () => {
+            if (typeof window.gtag !== 'undefined') {
+                window.gtag('event', 'hero_cta_click', {
+                    'store_name': 'google_play',
+                    'event_category': 'conversion',
+                    'event_label': 'Hero Badges'
+                });
+            }
+        });
+    }
+
+    if (webBtn) {
+        webBtn.addEventListener('click', () => {
+            if (typeof window.gtag !== 'undefined') {
+                window.gtag('event', 'hero_cta_click', {
+                    'store_name': 'web_version',
+                    'event_category': 'conversion',
+                    'event_label': 'Hero Badges'
+                });
+            }
+        });
+    }
+</script>
