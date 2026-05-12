@@ -1,0 +1,48 @@
+---
+const risks = [
+    {
+        image: "/images/scam-message.jpg",
+        title: "Mensajes Confusos",
+        description: "Textos o chats que fingen ser de confianza para pedirle datos personales con urgencia."
+    },
+    {
+        image: "/images/scam-call.jpg",
+        title: "Identidades Falsas",
+        description: "Llamadas de personas que simulan ser empleados de bancos o empresas para obtener sus claves."
+    },
+    {
+        image: "/images/scam-link.jpg",
+        title: "Enlaces Engañosos",
+        description: "Botones o páginas en internet diseñados para parecer reales y capturar su información privada."
+    }
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 lg:gap-10">
+    {risks.map(({ image, title, description }) => (
+            <article class="group relative flex flex-col rounded-3xl border border-white/10 bg-white/1 transition-all duration-500 hover:border-primary/25 hover:bg-white/3">
+
+                <div class="relative aspect-video w-full overflow-hidden rounded-t-[calc(1.5rem-1px)]
+                        before:absolute before:inset-0 before:bg-secondary/5 before:z-10 before:pointer-events-none
+                        after:absolute after:bottom-0 after:left-0 after:w-full after:h-px after:bg-linear-to-r after:from-transparent after:via-primary/20 after:to-transparent after:z-20">
+
+                    <img
+                            src={image}
+                            alt={title}
+                            width="400"
+                            height="225"
+                            class="object-cover w-full h-full opacity-60 grayscale-40 transition-all duration-700 ease-out group-hover:scale-105 group-hover:opacity-80 group-hover:grayscale-0"
+                    />
+                </div>
+
+                <div class="p-8 space-y-3">
+                    <h3 class="text-xl font-bold text-white tracking-tight leading-tight transition-colors duration-300 group-hover:text-primary">
+                        {title}
+                    </h3>
+                    <p class="text-[0.95rem] text-white/50 leading-relaxed font-medium transition-colors duration-300 group-hover:text-white/70">
+                        {description}
+                    </p>
+                </div>
+            </article>
+    ))}
+</div>
